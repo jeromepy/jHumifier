@@ -153,14 +153,15 @@ class meteo_Handler:
 
         (chip_id, chip_version) = self.readBME280ID()
         print("Chip ID     :" + str(chip_id))
-        print("Version     :" + chip_version)
+        print("Version     :" + str(chip_version))
 
         temperature, pressure, humidity = self.readBME280All()
 
-        print("Temperature : " + str(temperature) + "C")
-        print("Pressure : " + str(pressure) + "hPa")
-        print("Humidity : " + str(humidity) + "%")
+        print(f'Temperature : {temperature:.1f} °C')
+        print(f'Pressure : {pressure:1f} hPa')
+        print(f'Humidity : {humidity:.1f} %')
 
 
 if __name__ == "__main__":
     meteo = meteo_Handler()
+    meteo.main()
