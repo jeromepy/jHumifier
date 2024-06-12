@@ -1,0 +1,12 @@
+To properly setup the device, the following steps are needed:
+
+1. Activate i2c interface for rasperrypi
+-> sudo raspy-config
+-> Interface Options -> I2c enable
+
+2. install i2c-tools and detect address of device
+sudo apt-get install i2c-tools
+i2cdetect -y 1
+
+--> adress can be seen in output. In my case it was 0x77
+this adress has to be set in the source code
